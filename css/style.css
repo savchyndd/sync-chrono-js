@@ -1,0 +1,207 @@
+:root {
+    --main-color: #94adcf;
+    --main-active-color: #fabb18;
+    --wrong-color: #f44336;
+
+    --bg-color: #38404b;
+    --bg-overlay: linear-gradient(138.13deg, #22343c75 25.87%, #1f2e3572 100%);
+
+    --main-shadow: -1px 1px 2px rgba(22, 26, 30, 0.2),
+        1px -1px 2px rgba(22, 26, 30, 0.2),
+        -1px -1px 2px rgba(90, 102, 120, 0.9), 1px 1px 3px rgba(22, 26, 30, 0.9),
+        inset 1px 1px 2px rgba(90, 102, 120, 0.3),
+        inset -1px -1px 2px rgba(22, 26, 30, 0.5);
+    --main-shadow-active: 1px 1px 2px rgba(66, 75, 88, 0.3),
+        -1px -1px 2px rgba(46, 53, 62, 0.5),
+        inset -3px 3px 6px rgba(46, 53, 62, 0.2),
+        inset 3px -3px 6px rgba(46, 53, 62, 0.2),
+        inset -3px -3px 6px rgba(66, 75, 88, 0.9),
+        inset 3px 3px 8px rgba(46, 53, 62, 0.9);
+
+    --second-shadow: -5px 5px 10px rgba(48, 54, 64, 0.2),
+        5px -5px 10px rgba(48, 54, 64, 0.2),
+        -5px -5px 10px rgba(64, 74, 86, 0.9), 5px 5px 13px rgba(48, 54, 64, 0.9),
+        inset 1px 1px 2px rgba(64, 74, 86, 0.3),
+        inset -1px -1px 2px rgba(48, 54, 64, 0.5);
+    --second-shadow-active: 1px 1px 2px rgba(64, 74, 86, 0.3),
+        -1px -1px 2px rgba(48, 54, 64, 0.5),
+        inset -5px 5px 10px rgba(48, 54, 64, 0.2),
+        inset 5px -5px 10px rgba(48, 54, 64, 0.2),
+        inset -5px -5px 10px rgba(64, 74, 86, 0.9),
+        inset 5px 5px 13px rgba(48, 54, 64, 0.9);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+ul,
+section {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+ul {
+    list-style: none;
+}
+button {
+    border: 0;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Ubuntu', 'Segoe UI',
+        'Roboto', 'Oxygen', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    color: var(--main-color);
+    background-color: var(--bg-color);
+}
+body.modal-open {
+    overflow: hidden;
+}
+
+.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+.isShow {
+    display: none;
+}
+.container {
+    display: grid;
+    justify-content: center;
+
+    padding: 40px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.table {
+    text-align: left;
+
+    width: 100%;
+    padding: 12px;
+    margin-top: 24px;
+
+    outline: 2px solid var(--main-color);
+    outline-offset: 2px;
+    border-radius: 16px;
+    border-spacing: 0 14px;
+}
+
+.table--summary {
+    width: inherit;
+    margin-bottom: 24px;
+}
+
+.table_header {
+    border-radius: 12px;
+    box-shadow: var(--main-shadow);
+}
+.table_header th {
+    padding: 12px;
+}
+.table-row {
+    border-radius: 12px;
+    box-shadow: var(--second-shadow);
+}
+.table-row td {
+    padding: 12px;
+}
+
+.btn {
+    font: inherit;
+
+    padding: 12px 24px;
+    margin-top: 12px;
+    margin-left: auto;
+    width: max-content;
+
+    border: none;
+    border-radius: 16px;
+
+    color: inherit;
+    background-color: var(--bg-color);
+    box-shadow: var(--main-shadow);
+
+    cursor: pointer;
+}
+.btn:hover,
+.btn:focus,
+.btn-note:hover,
+.btn-note:focus {
+    color: var(--main-active-color);
+    box-shadow: var(--main-shadow-active);
+}
+
+.btn-note {
+    font: inherit;
+
+    padding: 4px 8px;
+    width: max-content;
+
+    border: none;
+    border-radius: 6px;
+
+    color: inherit;
+    background-color: var(--bg-color);
+    box-shadow: var(--main-shadow);
+
+    cursor: pointer;
+}
+
+.overlay {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-overlay);
+}
+
+.modal {
+    border-radius: 25px;
+    overflow: hidden;
+
+    max-width: calc(100vw - 48px);
+    max-height: calc(100vh - 24px);
+
+    padding: 32px;
+    background-color: var(--bg-color);
+}
+form {
+    display: grid;
+    gap: 8px;
+}
+form > label {
+    display: grid;
+    gap: 4px;
+}
+.field {
+    padding: 12px;
+
+    color: var(--main-color);
+    background: var(--bg-color);
+    box-shadow: var(--main-shadow-active);
+    border-radius: 8px;
+    border: none;
+}
+.field:focus {
+    outline: 2px inset var(--main-active-color);
+}
