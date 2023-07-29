@@ -34,7 +34,7 @@ export const notes = [
         category: 'Task',
         content: 'Tomatoes, bread.',
         date: '',
-        arhived: false,
+        arhived: true,
     },
     {
         id: '5',
@@ -52,7 +52,7 @@ export const notes = [
         category: 'Idea',
         content: 'Implement new plant',
         date: '20/3/2023, 5/5/2023',
-        arhived: false,
+        arhived: true,
     },
     {
         id: '7',
@@ -61,7 +61,7 @@ export const notes = [
         category: 'Task',
         content: 'Tomatoes, bread.',
         date: '',
-        arhived: false,
+        arhived: true,
     },
     {
         id: '8',
@@ -79,7 +79,7 @@ export const notes = [
         category: 'Idea',
         content: 'Implement new plant',
         date: '20/3/2023, 5/5/2023',
-        arhived: false,
+        arhived: true,
     },
     {
         id: '10',
